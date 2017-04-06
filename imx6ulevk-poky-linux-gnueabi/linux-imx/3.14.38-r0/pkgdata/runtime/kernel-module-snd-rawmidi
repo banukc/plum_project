@@ -1,0 +1,16 @@
+PN: linux-imx
+PV: 3.14.38
+PR: r0
+PKGV: 3.14.38
+PKGR: r0
+LICENSE: GPLv2
+DESCRIPTION_kernel-module-snd-rawmidi: snd-rawmidi kernel module; Midlevel RawMidi code for ALSA.
+SUMMARY_kernel-module-snd-rawmidi: snd-rawmidi kernel module
+RDEPENDS_kernel-module-snd-rawmidi: kernel-3.14.38-6UL_ga+ge4944a5
+SECTION: base
+PKG_kernel-module-snd-rawmidi: kernel-module-snd-rawmidi
+FILES_kernel-module-snd-rawmidi: /lib/modules/3.14.38-6UL_ga+ge4944a5/kernel/sound/core/snd-rawmidi.ko /etc/modules-load.d/snd-rawmidi.conf /etc/modprobe.d/snd-rawmidi.conf
+pkg_postinst_kernel-module-snd-rawmidi: #!/bin/sh\nif [ -z "$D" ]; then\n\tdepmod -a 3.14.38-6UL_ga+ge4944a5\nelse\n\t# image.bbclass will call depmodwrapper after everything is installed,\n\t# no need to do it here as well\n\t:\nfi\n\n
+pkg_postrm_kernel-module-snd-rawmidi: #!/bin/sh\nif [ -z "$D" ]; then\n\tdepmod -a 3.14.38-6UL_ga+ge4944a5\nelse\n\tdepmodwrapper -a -b $D 3.14.38-6UL_ga+ge4944a5\nfi\n\n
+FILES_INFO: {"/lib/modules/3.14.38-6UL_ga+ge4944a5/kernel/sound/core/snd-rawmidi.ko": 32120}
+PKGSIZE_kernel-module-snd-rawmidi: 32120

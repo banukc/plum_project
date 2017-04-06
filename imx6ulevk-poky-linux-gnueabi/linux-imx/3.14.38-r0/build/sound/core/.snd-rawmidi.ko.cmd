@@ -1,0 +1,1 @@
+cmd_sound/core/snd-rawmidi.ko := arm-poky-linux-gnueabi-ld.bfd   -r  -T /home/banuprakash/plum_project/fsl-release-bsp/test-build/tmp/work-shared/imx6ulevk/kernel-source/scripts/module-common.lds --build-id  -o sound/core/snd-rawmidi.ko sound/core/snd-rawmidi.o sound/core/snd-rawmidi.mod.o

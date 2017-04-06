@@ -1,0 +1,1 @@
+cmd_drivers/mxc/mlb/mxc_mlb.ko := arm-poky-linux-gnueabi-ld.bfd   -r  -T /home/banuprakash/plum_project/fsl-release-bsp/test-build/tmp/work-shared/imx6ulevk/kernel-source/scripts/module-common.lds --build-id  -o drivers/mxc/mlb/mxc_mlb.ko drivers/mxc/mlb/mxc_mlb.o drivers/mxc/mlb/mxc_mlb.mod.o

@@ -1,0 +1,23 @@
+DEBUG: Executing python function sysroot_cleansstate
+DEBUG: Python function sysroot_cleansstate finished
+DEBUG: Executing shell function do_configure
+NOTE: make -C /home/banuprakash/plum_project/fsl-release-bsp/test-build/tmp/work/imx6ulevk-poky-linux-gnueabi/linux-imx/3.14.38-r0/git O=/home/banuprakash/plum_project/fsl-release-bsp/test-build/tmp/work/imx6ulevk-poky-linux-gnueabi/linux-imx/3.14.38-r0/build oldnoconfig
+make: Entering directory `/home/banuprakash/plum_project/fsl-release-bsp/test-build/tmp/work-shared/imx6ulevk/kernel-source'
+  HOSTCC  scripts/basic/fixdep
+  GEN     /home/banuprakash/plum_project/fsl-release-bsp/test-build/tmp/work/imx6ulevk-poky-linux-gnueabi/linux-imx/3.14.38-r0/build/Makefile
+  HOSTCC  scripts/kconfig/conf.o
+  SHIPPED scripts/kconfig/zconf.tab.c
+  SHIPPED scripts/kconfig/zconf.lex.c
+  SHIPPED scripts/kconfig/zconf.hash.c
+  HOSTCC  scripts/kconfig/zconf.tab.o
+  HOSTLD  scripts/kconfig/conf
+scripts/kconfig/conf --olddefconfig Kconfig
+#
+# configuration written to .config
+#
+make: Leaving directory `/home/banuprakash/plum_project/fsl-release-bsp/test-build/tmp/work-shared/imx6ulevk/kernel-source'
+DEBUG: Shell function do_configure finished
+DEBUG: Executing python function do_qa_configure
+NOTE: Checking autotools environment for common misconfiguration
+NOTE: linux-imx: md5 checksum matched for file://COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7
+DEBUG: Python function do_qa_configure finished

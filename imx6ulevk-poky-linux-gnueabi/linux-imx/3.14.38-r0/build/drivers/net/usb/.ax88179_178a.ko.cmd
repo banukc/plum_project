@@ -1,0 +1,1 @@
+cmd_drivers/net/usb/ax88179_178a.ko := arm-poky-linux-gnueabi-ld.bfd   -r  -T /home/banuprakash/plum_project/fsl-release-bsp/test-build/tmp/work-shared/imx6ulevk/kernel-source/scripts/module-common.lds --build-id  -o drivers/net/usb/ax88179_178a.ko drivers/net/usb/ax88179_178a.o drivers/net/usb/ax88179_178a.mod.o

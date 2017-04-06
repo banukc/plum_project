@@ -1,0 +1,15 @@
+PN: linux-imx
+PV: 3.14.38
+PR: r0
+PKGV: 3.14.38
+PKGR: r0
+LICENSE: GPLv2
+DESCRIPTION: Linux Kernel provided and supported by Freescale with focus on i.MX Family Reference Boards. It includes support for many IPs such as GPU, VPU and IPU.
+SUMMARY: Linux Kernel provided and supported by Freescale
+SECTION: base
+PKG_kernel-vmlinux: kernel-vmlinux
+FILES_kernel-vmlinux: /boot/vmlinux*
+FILERPROVIDESFLIST_kernel-vmlinux: /boot/vmlinux-3.14.38-6UL@underscore@ga+ge4944a5
+FILES_INFO: {"/boot/vmlinux-3.14.38-6UL_ga+ge4944a5": 15064555}
+FILERPROVIDES_/boot/vmlinux-3.14.38-6UL@underscore@ga+ge4944a5_kernel-vmlinux: elf(buildid) (= f8affa1e6dbdcbfa7be40fe1649d72c10b0959d3)
+PKGSIZE_kernel-vmlinux: 15064555

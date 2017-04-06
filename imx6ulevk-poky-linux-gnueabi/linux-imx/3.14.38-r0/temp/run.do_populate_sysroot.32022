@@ -1,0 +1,17 @@
+def do_populate_sysroot(d):
+    bb.build.exec_func("sysroot_stage_all", d)
+    for f in (d.getVar('SYSROOT_PREPROCESS_FUNCS', True) or '').split():
+        bb.build.exec_func(f, d)
+    pn = d.getVar("PN", True)
+    multiprov = d.getVar("MULTI_PROVIDER_WHITELIST", True).split()
+    provdir = d.expand("/home/banuprakash/plum_project/fsl-release-bsp/test-build/tmp/work/imx6ulevk-poky-linux-gnueabi/linux-imx/3.14.38-r0/sysroot-destdir//sysroot-providers/")
+    bb.utils.mkdirhier(provdir)
+    for p in d.getVar("PROVIDES", True).split():
+        if p in multiprov:
+            continue
+        p = p.replace("/", "_")
+        with open(provdir + p, "w") as f:
+            f.write(pn)
+
+do_populate_sysroot(d)
+

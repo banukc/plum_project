@@ -1,0 +1,1 @@
+cmd_sound/usb/snd-usbmidi-lib.ko := arm-poky-linux-gnueabi-ld.bfd   -r  -T /home/banuprakash/plum_project/fsl-release-bsp/test-build/tmp/work-shared/imx6ulevk/kernel-source/scripts/module-common.lds --build-id  -o sound/usb/snd-usbmidi-lib.ko sound/usb/snd-usbmidi-lib.o sound/usb/snd-usbmidi-lib.mod.o

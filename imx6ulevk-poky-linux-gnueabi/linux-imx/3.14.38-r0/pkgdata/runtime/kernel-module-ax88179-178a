@@ -1,0 +1,16 @@
+PN: linux-imx
+PV: 3.14.38
+PR: r0
+PKGV: 3.14.38
+PKGR: r0
+LICENSE: GPLv2
+DESCRIPTION_kernel-module-ax88179-178a: ax88179-178a kernel module; ASIX AX88179/178A based USB 3.0/2.0 Gigabit Ethernet Devices
+SUMMARY_kernel-module-ax88179-178a: ax88179-178a kernel module
+RDEPENDS_kernel-module-ax88179-178a: kernel-3.14.38-6UL_ga+ge4944a5 kernel-module-usbnet
+SECTION: base
+PKG_kernel-module-ax88179-178a: kernel-module-ax88179-178a
+FILES_kernel-module-ax88179-178a: /lib/modules/3.14.38-6UL_ga+ge4944a5/kernel/drivers/net/usb/ax88179_178a.ko /etc/modules-load.d/ax88179_178a.conf /etc/modprobe.d/ax88179_178a.conf
+pkg_postinst_kernel-module-ax88179-178a: #!/bin/sh\nif [ -z "$D" ]; then\n\tdepmod -a 3.14.38-6UL_ga+ge4944a5\nelse\n\t# image.bbclass will call depmodwrapper after everything is installed,\n\t# no need to do it here as well\n\t:\nfi\n\n
+pkg_postrm_kernel-module-ax88179-178a: #!/bin/sh\nif [ -z "$D" ]; then\n\tdepmod -a 3.14.38-6UL_ga+ge4944a5\nelse\n\tdepmodwrapper -a -b $D 3.14.38-6UL_ga+ge4944a5\nfi\n\n
+FILES_INFO: {"/lib/modules/3.14.38-6UL_ga+ge4944a5/kernel/drivers/net/usb/ax88179_178a.ko": 21624}
+PKGSIZE_kernel-module-ax88179-178a: 21624

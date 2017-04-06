@@ -1,0 +1,16 @@
+PN: linux-imx
+PV: 3.14.38
+PR: r0
+PKGV: 3.14.38
+PKGR: r0
+LICENSE: GPLv2
+DESCRIPTION_kernel-module-videobuf2-vmalloc: videobuf2-vmalloc kernel module; vmalloc memory handling routines for videobuf2
+SUMMARY_kernel-module-videobuf2-vmalloc: videobuf2-vmalloc kernel module
+RDEPENDS_kernel-module-videobuf2-vmalloc: kernel-3.14.38-6UL_ga+ge4944a5
+SECTION: base
+PKG_kernel-module-videobuf2-vmalloc: kernel-module-videobuf2-vmalloc
+FILES_kernel-module-videobuf2-vmalloc: /lib/modules/3.14.38-6UL_ga+ge4944a5/kernel/drivers/media/v4l2-core/videobuf2-vmalloc.ko /etc/modules-load.d/videobuf2-vmalloc.conf /etc/modprobe.d/videobuf2-vmalloc.conf
+pkg_postinst_kernel-module-videobuf2-vmalloc: #!/bin/sh\nif [ -z "$D" ]; then\n\tdepmod -a 3.14.38-6UL_ga+ge4944a5\nelse\n\t# image.bbclass will call depmodwrapper after everything is installed,\n\t# no need to do it here as well\n\t:\nfi\n\n
+pkg_postrm_kernel-module-videobuf2-vmalloc: #!/bin/sh\nif [ -z "$D" ]; then\n\tdepmod -a 3.14.38-6UL_ga+ge4944a5\nelse\n\tdepmodwrapper -a -b $D 3.14.38-6UL_ga+ge4944a5\nfi\n\n
+FILES_INFO: {"/lib/modules/3.14.38-6UL_ga+ge4944a5/kernel/drivers/media/v4l2-core/videobuf2-vmalloc.ko": 8060}
+PKGSIZE_kernel-module-videobuf2-vmalloc: 8060

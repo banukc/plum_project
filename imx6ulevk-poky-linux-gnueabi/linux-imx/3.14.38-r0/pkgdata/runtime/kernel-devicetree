@@ -1,0 +1,15 @@
+PN: linux-imx
+PV: 3.14.38
+PR: r0
+PKGV: 3.14.38
+PKGR: r0
+LICENSE: GPLv2
+DESCRIPTION: Linux Kernel provided and supported by Freescale with focus on i.MX Family Reference Boards. It includes support for many IPs such as GPU, VPU and IPU.
+SUMMARY: Linux Kernel provided and supported by Freescale
+SECTION: base
+PKG_kernel-devicetree: kernel-devicetree
+FILES_kernel-devicetree: /boot/devicetree*
+pkg_postinst_kernel-devicetree: \tcd /boot\n\tfor DTB_FILE in imx6ul-14x14-evk.dtb imx6ul-14x14-evk-csi.dtb\n\tdo\n\t\tDTB_BASE_NAME=`basename ${DTB_FILE} | awk -F "." \'{print $1}\'`\n\t\tDTB_SYMLINK_NAME=`echo zImage-imx6ulevk | sed "s/imx6ulevk/${DTB_BASE_NAME}/g"`\n\t\tupdate-alternatives --install /boot/${DTB_BASE_NAME}.dtb ${DTB_BASE_NAME}.dtb devicetree-${DTB_SYMLINK_NAME}.dtb 31438 || true\n\tdone\n
+pkg_postrm_kernel-devicetree: \tcd /boot\n\tfor DTB_FILE in imx6ul-14x14-evk.dtb imx6ul-14x14-evk-csi.dtb\n\tdo\n\t\tDTB_BASE_NAME=`basename ${DTB_FILE} | awk -F "." \'{print $1}\'`\n\t\tDTB_SYMLINK_NAME=`echo zImage-imx6ulevk | sed "s/imx6ulevk/${DTB_BASE_NAME}/g"`\n\t\tupdate-alternatives --remove ${DTB_BASE_NAME}.dtb devicetree-${DTB_SYMLINK_NAME}.dtb 31438 || true\n\tdone\n
+FILES_INFO: {"/boot/devicetree-zImage-imx6ul-14x14-evk.dtb": 34342, "/boot/devicetree-zImage-imx6ul-14x14-evk-csi.dtb": 34338}
+PKGSIZE_kernel-devicetree: 68680

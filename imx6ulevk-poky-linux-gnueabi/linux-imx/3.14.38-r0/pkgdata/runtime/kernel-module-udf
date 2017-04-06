@@ -1,0 +1,16 @@
+PN: linux-imx
+PV: 3.14.38
+PR: r0
+PKGV: 3.14.38
+PKGR: r0
+LICENSE: GPLv2
+DESCRIPTION_kernel-module-udf: udf kernel module; Universal Disk Format Filesystem
+SUMMARY_kernel-module-udf: udf kernel module
+RDEPENDS_kernel-module-udf: kernel-3.14.38-6UL_ga+ge4944a5 kernel-module-crc-itu-t
+SECTION: base
+PKG_kernel-module-udf: kernel-module-udf
+FILES_kernel-module-udf: /lib/modules/3.14.38-6UL_ga+ge4944a5/kernel/fs/udf/udf.ko /etc/modules-load.d/udf.conf /etc/modprobe.d/udf.conf
+pkg_postinst_kernel-module-udf: #!/bin/sh\nif [ -z "$D" ]; then\n\tdepmod -a 3.14.38-6UL_ga+ge4944a5\nelse\n\t# image.bbclass will call depmodwrapper after everything is installed,\n\t# no need to do it here as well\n\t:\nfi\n\n
+pkg_postrm_kernel-module-udf: #!/bin/sh\nif [ -z "$D" ]; then\n\tdepmod -a 3.14.38-6UL_ga+ge4944a5\nelse\n\tdepmodwrapper -a -b $D 3.14.38-6UL_ga+ge4944a5\nfi\n\n
+FILES_INFO: {"/lib/modules/3.14.38-6UL_ga+ge4944a5/kernel/fs/udf/udf.ko": 110660}
+PKGSIZE_kernel-module-udf: 110660

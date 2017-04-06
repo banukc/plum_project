@@ -1,0 +1,1 @@
+cmd_vmlinux := /bin/bash /home/banuprakash/plum_project/fsl-release-bsp/test-build/tmp/work-shared/imx6ulevk/kernel-source/scripts/link-vmlinux.sh arm-poky-linux-gnueabi-ld.bfd    -p --no-undefined -X --build-id

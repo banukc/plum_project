@@ -1,0 +1,1 @@
+cmd_drivers/usb/gadget/usb_f_acm.ko := arm-poky-linux-gnueabi-ld.bfd   -r  -T /home/banuprakash/plum_project/fsl-release-bsp/test-build/tmp/work-shared/imx6ulevk/kernel-source/scripts/module-common.lds --build-id  -o drivers/usb/gadget/usb_f_acm.ko drivers/usb/gadget/usb_f_acm.o drivers/usb/gadget/usb_f_acm.mod.o

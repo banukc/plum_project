@@ -1,0 +1,17 @@
+PN: linux-imx
+PV: 3.14.38
+PR: r0
+PKGV: 3.14.38
+PKGR: r0
+LICENSE: GPLv2
+DESCRIPTION: Linux Kernel provided and supported by Freescale with focus on i.MX Family Reference Boards. It includes support for many IPs such as GPU, VPU and IPU.
+SUMMARY: Linux Kernel provided and supported by Freescale
+RDEPENDS_kernel-base: kernel-image
+RPROVIDES_kernel-base:  kernel-3.14.38-6UL_ga+ge4944a5 kernel-base
+SECTION: base
+PKG_kernel-base: kernel-3.14.38-6ul-ga+ge4944a5
+ALLOW_EMPTY_kernel-base: 1
+FILES_kernel-base: /lib/modules/3.14.38-6UL_ga+ge4944a5/modules.order /lib/modules/3.14.38-6UL_ga+ge4944a5/modules.builtin
+pkg_postinst_kernel-base: \tif [ ! -e "$D/lib/modules/3.14.38-6UL_ga+ge4944a5" ]; then\n\t\tmkdir -p $D/lib/modules/3.14.38-6UL_ga+ge4944a5\n\tfi\n\tif [ -n "$D" ]; then\n\t\tdepmodwrapper -a -b $D 3.14.38-6UL_ga+ge4944a5\n\telse\n\t\tdepmod -a 3.14.38-6UL_ga+ge4944a5\n\tfi\n
+FILES_INFO: {"/lib/modules/3.14.38-6UL_ga+ge4944a5/modules.order": 3307, "/lib/modules/3.14.38-6UL_ga+ge4944a5/modules.builtin": 20436}
+PKGSIZE_kernel-base: 23743

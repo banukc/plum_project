@@ -1,0 +1,16 @@
+PN: linux-imx
+PV: 3.14.38
+PR: r0
+PKGV: 3.14.38
+PKGR: r0
+LICENSE: GPLv2
+DESCRIPTION_kernel-module-net1080: net1080 kernel module; NetChip 1080 based USB Host-to-Host Links
+SUMMARY_kernel-module-net1080: net1080 kernel module
+RDEPENDS_kernel-module-net1080: kernel-3.14.38-6UL_ga+ge4944a5 kernel-module-usbnet
+SECTION: base
+PKG_kernel-module-net1080: kernel-module-net1080
+FILES_kernel-module-net1080: /lib/modules/3.14.38-6UL_ga+ge4944a5/kernel/drivers/net/usb/net1080.ko /etc/modules-load.d/net1080.conf /etc/modprobe.d/net1080.conf
+pkg_postinst_kernel-module-net1080: #!/bin/sh\nif [ -z "$D" ]; then\n\tdepmod -a 3.14.38-6UL_ga+ge4944a5\nelse\n\t# image.bbclass will call depmodwrapper after everything is installed,\n\t# no need to do it here as well\n\t:\nfi\n\n
+pkg_postrm_kernel-module-net1080: #!/bin/sh\nif [ -z "$D" ]; then\n\tdepmod -a 3.14.38-6UL_ga+ge4944a5\nelse\n\tdepmodwrapper -a -b $D 3.14.38-6UL_ga+ge4944a5\nfi\n\n
+FILES_INFO: {"/lib/modules/3.14.38-6UL_ga+ge4944a5/kernel/drivers/net/usb/net1080.ko": 7888}
+PKGSIZE_kernel-module-net1080: 7888
