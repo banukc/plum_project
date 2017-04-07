@@ -1,0 +1,1 @@
+cmd_fs/fat/msdos.ko := arm-poky-linux-gnueabi-ld -EL -r  -T /home/banuprakash/plum_project/fsl-release-bsp/test-build/tmp/work-shared/imx6ulevk/kernel-source/scripts/module-common.lds --build-id  -o fs/fat/msdos.ko fs/fat/msdos.o fs/fat/msdos.mod.o

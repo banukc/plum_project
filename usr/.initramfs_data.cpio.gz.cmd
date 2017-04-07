@@ -1,0 +1,1 @@
+cmd_usr/initramfs_data.cpio.gz := /bin/bash /home/banuprakash/plum_project/fsl-release-bsp/test-build/tmp/work-shared/imx6ulevk/kernel-source/scripts/gen_initramfs_list.sh -o usr/initramfs_data.cpio.gz   -d

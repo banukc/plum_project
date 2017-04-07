@@ -1,0 +1,3 @@
+kernel/drivers/rtc/rtc-hid-sensor-time.ko
+kernel/drivers/rtc/rtc-mxc.ko
+kernel/drivers/rtc/rtc-snvs.ko

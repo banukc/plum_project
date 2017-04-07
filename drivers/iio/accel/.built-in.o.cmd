@@ -1,0 +1,1 @@
+cmd_drivers/iio/accel/built-in.o :=  arm-poky-linux-gnueabi-ld -EL    -r -o drivers/iio/accel/built-in.o drivers/iio/accel/bma180.o drivers/iio/accel/hid-sensor-accel-3d.o drivers/iio/accel/kxsd9.o drivers/iio/accel/st_accel.o drivers/iio/accel/st_accel_i2c.o drivers/iio/accel/st_accel_spi.o 

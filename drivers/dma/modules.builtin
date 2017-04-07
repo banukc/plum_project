@@ -1,0 +1,2 @@
+kernel/drivers/dma/imx-sdma.ko
+kernel/drivers/dma/imx-dma.ko
